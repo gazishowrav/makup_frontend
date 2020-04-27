@@ -1,0 +1,152 @@
+//specialProducts
+
+.special-products {
+	.card {
+		border: 0;
+		a {
+			text-decoration: none;
+			display: block;
+			cursor: pointer;
+		}
+		.img-box {
+			overflow: hidden;
+			display: block;
+			img {
+				transform: scale(1);
+				transition: transform 0.3s ease-in-out;
+			}
+		}
+		.rating {
+			li {
+				font-size: 16px;
+				color: #ddd;
+			}
+		}
+		h3 {
+			margin: 0;
+		    text-decoration: none;
+		    line-height: 20px;
+		    font-size: 12px;
+		    font-weight: 600;
+		    padding: 5px 0 15px;
+		    margin-bottom: 2rem;
+		    color: #707070;
+		    text-transform: capitalize;
+		}
+		.price-box {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			display: block;
+			transition: all 0.3s ease-in-out;
+			span {
+				font-size: 16px;
+				&.offer-price {
+					font-weight: 600;
+					color: #ffd200;
+				    text-decoration: line-through;
+				}
+				&.recent-price {
+				    color: #808080;
+				}
+			}
+		}
+		.addcart-box {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			display: none;
+			transition: all 0.3s ease-in-out;
+			a {
+			    font-size: 16px;
+			    width: 35px;
+			    height: 35px;
+			    background: rgb(45,45,45);
+			    display: flex;
+			    align-items: center;
+			    justify-content: center;
+			    border-radius: 4px;
+			    color: #fff;
+			    float: left;
+			    margin-right: 5px;
+			    transition: all 0.3s ease-in-out;
+			    &:hover {
+			    	background: rgb(255,210,0);
+			    }
+			}
+		}
+		&:hover {
+			.img-box {
+				img {
+					transform: scale(1.08);
+				}
+			}
+			.price-box {
+				display: none;
+				transition: all 0.3s ease-in-out;
+
+			}
+			.addcart-box {
+				display: block;
+				transition: all 0.3s ease-in-out;
+			}
+		}
+	}
+	.item {
+		.card {
+			.img-box {
+				&::after {
+					background: #f0f0f0;
+					content: "";
+					right: 0px;
+					top: 15px;
+					bottom: 30%;
+					width: 1px;
+					position: absolute;
+				}
+			}
+		}
+	}
+	.owl-nav {
+		position: absolute;
+		top: 45%;
+		left: 0;
+		width: 100%;
+		display: none;
+		.owl-prev {
+			position: absolute;
+			left: 0;
+			width: 40px;
+		    height: 40px;
+		    border: 1px solid #ccc!important;
+		    border-radius: 50%;
+		    &:focus {
+		    	outline: none;
+		    }
+		    &:hover {
+		    	color: #FFD200;
+		    	border: 1px solid #FFD200!important;
+		    }
+		}
+		.owl-next {
+			position: absolute;
+			right: 0;
+			width: 40px;
+		    height: 40px;
+		    border: 1px solid #ccc!important;
+		    border-radius: 50%;
+		    &:focus {
+		    	outline: none;
+		    }
+		    &:hover {
+		    	color: #FFD200;
+		    	border: 1px solid #FFD200!important;
+		    }
+		}
+	}
+	&:hover {
+		.owl-nav {
+			display: block;
+		}
+	}
+}

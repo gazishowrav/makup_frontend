@@ -1,0 +1,39 @@
+// shortDescription
+
+.short-description {
+	background: #ffd200;
+    padding: 2rem 1rem;
+	.desc-box {
+		display: flex;
+		cursor: pointer;
+	    span {
+	    	width: 50px;
+	    	padding: .5rem;
+	    	font-size: 25px;
+	    	color: #b5a248;
+	    	text-align: center;
+	    	transition: all 0.3s ease-in-out;
+	    }
+	    .desc-content {
+	    	h4 {
+	    		font-size: 15px;
+	    		font-weight: 600;
+	    		line-height: 15px;
+	    		word-wrap: break-word;
+	    		margin-top: 4px;
+	    	}
+	    	p {
+	    		color: #675500;
+	    		line-height: 15px;
+	    		margin-top: 7px;
+	    		font-size: 12px;
+	    		margin-bottom: 0;
+	    	}
+	    }
+	    &:hover {
+	    	span {
+	    		color: #000;
+	    	}
+	    }
+	}
+}

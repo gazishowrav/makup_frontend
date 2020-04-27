@@ -1,0 +1,94 @@
+// futureCard
+
+.future-card {
+	.card {
+		position: relative;
+		&::before {
+			bottom: 0;
+		    content: "";
+		    left: 50%;
+		    opacity: 1;
+		    -moz-opacity: 1;
+		    -khtml-opacity: 1;
+		    -webkit-opacity: 1;
+		    position: absolute;
+		    right: 51%;
+		    top: 0;
+		    background: rgba(255, 255, 255, 0.1) none repeat scroll 0 0;
+		}
+		&::after {
+			bottom: 50%;
+		    content: "";
+		    left: 0;
+		    opacity: 1;
+		    -moz-opacity: 1;
+		    -khtml-opacity: 1;
+		    -webkit-opacity: 1;
+		    position: absolute;
+		    right: 0;
+		    top: 50%;
+		    background: rgba(255, 255, 255, 0.1) none repeat scroll 0 0;
+		}
+		&:hover {
+			&::before {
+				left: 0px;
+			    right: 0px;
+			    top: 0px;
+			    bottom: 0px;
+			    transition: all 500ms ease-in-out 0s;
+			    -webkit-transition: all 500ms ease-in-out 0s;
+			    -moz-transition: all 500ms ease-in-out 0s;
+			    -o-transition: all 500ms ease-in-out 0s;
+			    -ms-transition: all 500ms ease-in-out 0s;
+			}
+			&::after {
+				left: 0px;
+			    right: 0px;
+			    top: 0px;
+			    bottom: 0px;
+			    transition: all 500ms ease-in-out 0s;
+			    -webkit-transition: all 500ms ease-in-out 0s;
+			    -moz-transition: all 500ms ease-in-out 0s;
+			    -o-transition: all 500ms ease-in-out 0s;
+			    -ms-transition: all 500ms ease-in-out 0s;
+			}
+			
+		}
+		.card-body {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			padding: 2.5rem;
+			z-index: 100;
+			h4 {
+				color: #fff;
+				font-size: 2rem;
+			    font-weight: 600;
+			}
+			p {
+				color: #aeaeae;
+			}
+			a {
+				color: #FFD200;
+			    margin-top: 2.5rem;
+    			display: block;
+    			text-decoration: underline;
+			}
+		}
+	}
+}
+
+/*Responsive*/
+
+@media (max-width: 768px) {
+	.future-card {
+		.card {
+			min-height: 200px;
+			img {
+				height: 100%;
+			}
+		}
+	}
+}

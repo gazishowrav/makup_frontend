@@ -1,0 +1,28 @@
+// productDetails
+
+.product-details {
+	h3 {
+		font-size: 25px;
+		font-weight: 600;
+		margin-bottom: 15px;
+	}
+	.price-box {
+		display: block;
+		margin-bottom: 15px;
+		transition: all 0.3s ease-in-out;
+		span {
+			font-size: 16px;
+			&.offer-price {
+				font-weight: 600;
+				color: #ffd200;
+			    text-decoration: line-through;
+			}
+			&.recent-price {
+			    color: #808080;
+			}
+		}
+	}
+	p {
+		font-size: 13px;
+	}
+}

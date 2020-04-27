@@ -1,0 +1,71 @@
+// sidebar
+
+.sidebar {
+	border: 3px solid #f0f0f0;
+	.media {
+		a {
+			img {
+				width: 100px;
+				height: 100px;
+				object-fit: cover;
+				border: 1px solid #ddd;
+				border-radius: 15px;
+			}
+		}
+		.media-body {
+			a {
+				text-decoration: none;
+				h5 {
+					font-size: 16px;
+					font-weight: 600;
+					color: $dark;
+					transition: all 0.3s ease-in-out;
+				}
+				p {
+					font-size: 13px;
+				    color: $dark;
+				    margin-bottom: 0;
+				    transition: all 0.3s ease-in-out;
+				}
+			}
+			.nav {
+				li {
+					font-size: 16px;
+					color: #ddd;
+				}
+			}
+		}
+		&:hover {
+			.media-body {
+				a {
+					h5 {
+						color: #FFD200;
+					}
+				}
+			}
+		}
+		.price-box {
+		    .offer-price {
+		        text-decoration: line-through;
+		    }
+		    .recent-price {
+				color: #808080;
+		    }      
+		}
+	}
+	.popular-tag {
+		.nav-link {
+		    font-size: 13px;
+		    font-weight: 600;
+			color: $dark;
+		    padding: 4px 10px;
+		    border: 1px solid #f0f0f0;
+		    margin: 4px 2px;
+		    border-radius: 4px;
+		    transition: all 0.3s ease-in-out;
+		    &:hover {
+		    	color: #FFD200;
+		    }
+		}
+	}
+}

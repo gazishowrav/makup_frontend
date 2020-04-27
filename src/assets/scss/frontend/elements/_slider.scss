@@ -1,0 +1,85 @@
+// slider
+
+.slider {
+    height: 400px;
+    .carousel-item {
+        img {
+            height: 400px;
+            /*object-fit: cover;*/
+        }
+        .carousel-caption {
+            right: 50%;
+            bottom: 40%;
+            text-align: right;
+            .carousel-title {
+                font-size: 24px;
+                color: #000;
+                visibility: hidden;
+                transform: translate(-100px, 0);
+                transition: transform 1s ease-in-out;
+            }
+            .carousel-subtitle {
+                font-size: 26px;
+                font-weight: 900;
+                color: #000;
+                visibility: hidden;
+                transform: translate(-100px, 0);
+                transition: transform 2s ease-in-out;
+            }
+            .carousel-des {
+                font-size: 9px;
+                color: #000;
+                visibility: hidden;
+                transform: translate(-100px, 0);
+                transition: transform 3s ease-in-out;
+                span {
+                    font-size: 9px;
+                    color: #000;
+                    text-decoration: underline;
+                }
+            }
+        }
+        &.active {
+            .carousel-caption {
+                .carousel-title {
+                    visibility: visible;
+                    transform: translate(0px, 0);
+                }
+                .carousel-subtitle {
+                    visibility: visible;
+                    transform: translate(0px, 0);
+                }
+                .carousel-des {
+                    visibility: visible;
+                    transform: translate(0px, 0);
+                }
+            }
+        }
+    }
+    .carousel-control-prev {
+        span {
+            font-size: 20px;
+            width: 35px;
+            height: 35px;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50px;
+        }
+    }
+    .carousel-control-next {
+        span {
+            font-size: 20px;
+            width: 35px;
+            height: 35px;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50px;
+        }
+    }
+}
+
+// slider caption animation

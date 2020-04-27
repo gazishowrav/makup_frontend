@@ -1,0 +1,64 @@
+
+// Color system
+
+$theme1:    		 #e3222a !default;
+$theme2:   		   #E7067E !default;
+$blue:   	       #9c27b0 !default;
+$lightblue:      #00bcd4 !default;
+$green:          #4caf50 !default;
+$red:            #f44336 !default;
+$yellow:         #ff9800 !default;
+$black:  		     #000000 !default;
+$light:			     #DDDDDD !default;
+$dark:    	     #2D2D2D !default;
+$hash:           #999 !default;
+
+$colors: () !default;
+$colors: map-merge(
+  (
+    "theme1":       $theme1,
+    "theme2":       $theme2,
+    "blue":         $blue,
+    "lightblue":    $lightblue,
+    "green":        $green,
+    "red":     	    $red,
+    "yellow":     	$yellow,
+    "black":        $black,
+    "light":       	$light,
+    "dark":         $dark,
+    "hash":     	  $hash,
+  ),
+  $colors
+);
+
+$themered:        $theme1 !default;
+$themepink:       $theme2 !default;
+$primary:         $blue !default;
+$info:            $lightblue !default;
+$success:         $green !default;
+$danger:          $red !default;
+$warning:         $yellow !default;
+$black:           $black !default;
+$light:           $light !default;
+$dark:    		    $dark !default;
+$secondary:       $hash !default;
+
+$theme-colors: () !default;
+$theme-colors: map-merge(
+  (
+    "themered":   $themered,
+    "themepink":  $themepink,
+    "primary":    $primary,
+    "info":       $info,
+    "success":    $success,
+    "danger":     $danger,
+    "warning":    $warning,
+    "black":      $black,
+    "light":      $light,
+    "dark":       $dark,
+    "secondary":  $secondary
+  ),
+  $theme-colors
+);
+
+$font-family-raleway:           'Raleway';

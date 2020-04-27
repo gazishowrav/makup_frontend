@@ -1,0 +1,16 @@
+// products
+
+.products {
+	.sidebar {
+		.popular-categories {
+			.nav-link {
+				font-size: 13px;
+				font-weight: 500;
+				color: $dark;
+				&:hover {
+					color: $warning;
+				}
+			}
+		}
+	}
+}
