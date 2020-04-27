@@ -1,25 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import CategoryWiseProductView from '../views/CategoryWiseProductView.vue'
-import CategoryWiseProductView1 from '../views/CategoryWiseProductView1.vue'
-import SearchWiseProductView from '../views/SearchWiseProductView.vue'
-import SearchWiseProductView1 from '../views/SearchWiseProductView1.vue'
-import productDetetailsView from '../views/productDetails.vue'
-import signInView from '../views/signInView.vue'
-import checkOutPage from '../views/checkOutPage.vue'
-import cartReview from '../views/cartReview.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
-  {
-    path: '/',
-   
-    component: Home
-  },
    {
-    path: '/home',
+    path: '/', alias: '/home',
     name: 'Home',
     component: Home
   },
@@ -34,48 +21,45 @@ const routes = [
   {
     path:'/category/:categoryUrl',
     name:'category',
-    component:CategoryWiseProductView,
-
+    component: () => import(/* webpackChunkName: "about" */ '../views/CategoryWiseProductView.vue')
   },
   {
     path:'/product/category/:categoryUrl',
     name:'product.category',
-    component:CategoryWiseProductView1,
+    component: () => import(/* webpackChunkName: "about" */ '../views/CategoryWiseProductView1.vue')
 
   },
   {
     path:'/search/product/:search_key',
     name:'search.product',
-    component:SearchWiseProductView,
+    component: () => import(/* webpackChunkName: "about" */ '../views/SearchWiseProductView.vue')
  },
 
   {
     path:'/product/search/:search_key',
     name:'product.search',
-    component:SearchWiseProductView1,
+    component: () => import(/* webpackChunkName: "about" */ '../views/SearchWiseProductView1.vue')
   },
   {
     path:'/product/details/:productUrl',
     name:'product.details',
-    component:productDetetailsView,
+    component: () => import(/* webpackChunkName: "about" */ '../views/productDetails.vue')
   },
   {
     path:'/signin/',
     name:'signin',
-    component:signInView,
+    component: () => import(/* webpackChunkName: "about" */ '../views/signInView.vue')
   },
   {
     path:'/checkout/',
     name:'checkout',
-    component:checkOutPage,
+    component: () => import(/* webpackChunkName: "about" */ '../views/checkOutPage.vue')
   },
    {
     path:'/cart/review',
     name:'cartReView',
-    component:cartReview,
-  },
-
-
+    component: () => import(/* webpackChunkName: "about" */ '../views/cartReview.vue')
+  }
 ]
 
 const router = new VueRouter({
