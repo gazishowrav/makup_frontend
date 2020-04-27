@@ -104,44 +104,45 @@
                         </div>
                  </div>
                    <div class="col-lg-6">
-                        <div class="row">
-                            <div class="col-lg-12">
-                            <div class="card card-body shadow-sm h-100">
-                              <strong class="mb-3">Product Review</strong>
-                              <table class="table">
-                                <tr>
-                                    <td>Photo</td>
-                                    <td>Name</td>  
-                                    <td>Quantity</td>  
-                                    <td>Price</td>  
-                                    <td>Discount</td>
-                                    <td>Sub Total</td>  
+                        <!--Cart-->
+                        <div class="cart">
+                          <div class="card card-body shadow-sm h-100">
+                            <strong class="mb-3">Product Review</strong>
+                            <div class="table-responsive">
+                              <table class="table table-bordered">
+                                <tr class="bg-light">
+                                  <th colspan="2">Product</th>
+                                  <!-- <th>Name</th> -->
+                                  <th>Quantity</th>
+                                  <th>Price</th>
+                                  <th>Discount</th>
+                                  <th>Sub Total</th>
                                 </tr>
                                   <tr v-for="(productInfo, index) in this.$store.state.cart" :key="index">
-                                    <td>
+                                    <td class="item-img">
                                       <img :src="productInfo.productImage" :alt="productInfo.name">
                                     </td>
-                                    <td>{{productInfo.name}}</td>
-                                    <td>{{productInfo.quantity}}</td>
-                                    <td>{{productInfo.price*productInfo.quantity}}</td>
-                                    <td>{{productInfo.discount*productInfo.quantity}}</td>
-                                    <td>{{(productInfo.price*productInfo.quantity)-(productInfo.discount*productInfo.quantity)}}</td>
+                                    <td class="item-name font-weight-bold">{{productInfo.name}}</td>
+                                    <td class="quantity">{{productInfo.quantity}}</td>
+                                    <td class="price font-weight-bold">{{productInfo.price*productInfo.quantity}}</td>
+                                    <td class="discount font-weight-bold">{{productInfo.discount*productInfo.quantity}}</td>
+                                    <td class="subtotal font-weight-bold">{{(productInfo.price*productInfo.quantity)-(productInfo.discount*productInfo.quantity)}}</td>
                                   </tr>
                                   <tr>
-                                    <th class="text-right" colspan="4">Total Price</th>
-                                    <th colspan="2" class="text-right">৳ {{this.$store.state.priceInfo.totalPrice | formatNumberWithDecimal}}</th>
+                                    <th class="text-right" colspan="5">Total Price</th>
+                                    <th class="text-right">৳ {{this.$store.state.priceInfo.totalPrice | formatNumberWithDecimal}}</th>
                                   </tr>
                                   <tr>
-                                    <th class="text-right" colspan="4">Total Discount</th>
-                                    <th colspan="2" class="text-right">৳ {{this.$store.state.priceInfo.totalDiscount | formatNumberWithDecimal}}</th>
+                                    <th class="text-right" colspan="5">Total Discount</th>
+                                    <th class="text-right">৳ {{this.$store.state.priceInfo.totalDiscount | formatNumberWithDecimal}}</th>
                                   </tr>
                                   <tr>
-                                    <th class="text-right" colspan="4">Delivery Charge</th>
-                                    <th colspan="2" class="text-right">৳ {{deliveryCharge | formatNumberWithDecimal}}</th>
+                                    <th class="text-right" colspan="5">Delivery Charge</th>
+                                    <th class="text-right">৳ {{deliveryCharge | formatNumberWithDecimal}}</th>
                                   </tr>
                                   <tr>
-                                    <th class="text-right" colspan="4">Grand Total</th>
-                                    <th colspan="2" class="text-right">
+                                    <th class="text-right" colspan="5">Grand Total</th>
+                                    <th class="text-right">
                                       ৳ {{((this.$store.state.priceInfo.totalPrice+deliveryCharge)-(this.$store.state.priceInfo.totalDiscount)) | formatNumberWithDecimal}}
                                     </th>
                                   </tr>
@@ -149,7 +150,7 @@
                             </div>
                           </div>
                         </div>
-                        
+                        <!--/Cart-->
                         <div class="row" style="margin-top:10px;">
                           <div class="col-lg-12">
                             <div class="card card-body shadow-sm h-100">
