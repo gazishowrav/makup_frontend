@@ -118,7 +118,19 @@
                                   <th>Discount</th>
                                   <th>Sub Total</th>
                                 </tr>
-                                  <tr v-for="(productInfo, index) in this.$store.state.cart" :key="index">
+                                <slot v-for="(productInfo,index) in this.$store.state.cart">  
+                                  <cartProductReview 
+                                  :proId="productInfo.productId" 
+                                  :proIndex="index" 
+                                  :proQuantity="productInfo.quantity | formatNumberWithOutDecimal" 
+                                  :proName="productInfo.productName" 
+                                  :proDiscount="productInfo.discount" 
+                                  :proPrice="productInfo.price" 
+                                  :proImage="productInfo.productImage" 
+                                  >
+                                  </cartProductReview>
+                                </slot>
+                                  <!-- <tr v-for="(productInfo, index) in this.$store.state.cart" :key="index">
                                     <td class="item-img">
                                       <img :src="productInfo.productImage" :alt="productInfo.name">
                                     </td>
@@ -127,7 +139,7 @@
                                     <td class="price font-weight-bold">{{productInfo.price*productInfo.quantity}}</td>
                                     <td class="discount font-weight-bold">{{productInfo.discount*productInfo.quantity}}</td>
                                     <td class="subtotal font-weight-bold">{{(productInfo.price*productInfo.quantity)-(productInfo.discount*productInfo.quantity)}}</td>
-                                  </tr>
+                                  </tr> -->
                                   <tr>
                                     <th class="text-right" colspan="5">Total Price</th>
                                     <th class="text-right">৳ {{this.$store.state.priceInfo.totalPrice | formatNumberWithDecimal}}</th>
