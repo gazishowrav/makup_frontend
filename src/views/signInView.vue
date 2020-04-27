@@ -32,7 +32,7 @@
           <div class="col-lg-5">
             <!--sign in-->
             <div class="card card-body shadow-sm sign-in">
-              <h1 class="title">Sign In</h1>
+              <h1 class="title text-center"><i class="mdi mdi-account"></i>Sign In</h1>
               <div class="alert alert-danger" v-if="errored">{{errMsg}}</div>
               <form action="#">
                 <div class="form-group">
