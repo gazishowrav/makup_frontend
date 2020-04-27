@@ -1,6 +1,5 @@
 <template>
-  <!-- main-->
-  <main class="main">
+  <div class="products-details">
     <!--page-banner-->
     <div class="page-banner py-3">
       <div class="container-wrapper">
@@ -15,7 +14,7 @@
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb bg-transparent justify-content-end mb-0">
                 <li class="breadcrumb-item">
-                  <a href="index.html">Home</a>
+                  <router-link to="/">Home</router-link>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">Products Details</li>
               </ol>
@@ -79,9 +78,9 @@
             </div>
             <div class="col-lg-3">
               <div class="card shadow-sm mb-3" v-for="(banner,index) in banners" v-if="index==1">
-              	<router-link :to="{ name: 'category', params: { categoryUrl: banner.category.category_url }}">
-               		 <img class="rounded" :src="banner.name" :alt="banner.category.name" />
-            	</router-link>
+                <router-link :to="{ name: 'category', params: { categoryUrl: banner.category.category_url }}">
+                   <img class="rounded" :src="banner.name" :alt="banner.category.name" />
+              </router-link>
               </div>
             </div>
           </div>
@@ -94,8 +93,8 @@
             <div class="col-lg-3">
               <div class="card shadow-sm mb-3" v-for="(banner,index) in banners" v-if="index==2">
                 <router-link :to="{ name: 'category', params: { categoryUrl: banner.category.category_url }}">
-               		 <img class="rounded" :src="banner.name" :alt="banner.category.name" />
-            	</router-link>
+                   <img class="rounded" :src="banner.name" :alt="banner.category.name" />
+              </router-link>
               </div>
             </div>
             <div class="col-lg-9">
@@ -167,32 +166,31 @@
         <!--/Spacial Products-->
       </div>
     </div>
-  </main>
-  <!-- /main-->
+  </div>
 </template>
 <script>
 import moment from 'moment';
 export default {
-	data(){
-		return{
-			productInfo:[],
-			banners:[],
-			
-			productUrl:null,
-			relatedProducts:[],
+  data(){
+    return{
+      productInfo:[],
+      banners:[],
+      
+      productUrl:null,
+      relatedProducts:[],
       productQuantity:1,
-		}
-	},
-	
+    }
+  },
+  
   mounted() {
     this.productUrl = this.$route.params.productUrl;
     getProductDetails: {
       this.$http
         .get("product/details/" + this.productUrl)
         .then(response => {
-					this.productInfo=response.data.productInfo;
-					this.banners=response.data.banners;
-					this.relatedProducts=response.data.relatedProducts;
+          this.productInfo=response.data.productInfo;
+          this.banners=response.data.banners;
+          this.relatedProducts=response.data.relatedProducts;
         })
         .catch(error => {
           "";
@@ -202,18 +200,18 @@ export default {
   },
   methods: {
     loadProductDetails: function (proUrl) {
-    		this.$router.push({ name: 'product.details', params: { productUrl:proUrl } });
-		       this.$http
-		        .get("product/details/" +proUrl)
-		        .then(response => {
-							this.productInfo=response.data.productInfo;
-							this.banners=response.data.banners;
-							this.relatedProducts=response.data.relatedProducts;
-		        })
-		        .catch(error => {
-		          "";
-		        })
-		        .finally(() => "");
+        this.$router.push({ name: 'product.details', params: { productUrl:proUrl } });
+           this.$http
+            .get("product/details/" +proUrl)
+            .then(response => {
+              this.productInfo=response.data.productInfo;
+              this.banners=response.data.banners;
+              this.relatedProducts=response.data.relatedProducts;
+            })
+            .catch(error => {
+              "";
+            })
+            .finally(() => "");
     },
     discountDateCheck(value)
       {

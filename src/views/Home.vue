@@ -1,8 +1,5 @@
 <template>
   <div class="home">
-    
-    <!-- main-->
-    <main class="main">
       <Slider/>
       <!--products view-->
       <div class="products-view pt-5">
@@ -18,9 +15,6 @@
         </div>
       </div>
       <!--/products view-->
-    </main>
-    <!-- /main-->
-    
   </div>
 </template>
 

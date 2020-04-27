@@ -1,5 +1,5 @@
 <template>
-		<main class="main">
+	<div class="products-view-page">
 		<!--page-banner-->
 		<div class="page-banner py-3">
 			<div class="container-wrapper">
@@ -203,8 +203,7 @@
 				<!--/Products-->
 			</div>
 		</div>
-	</main>
-	<!-- /main-->
+	</div>
 </template>
 <script>
 import SideProduct from './element/SideProduct.vue';
