@@ -21,44 +21,44 @@ const routes = [
   {
     path:'/category/:categoryUrl',
     name:'category',
-    component: () => import(/* webpackChunkName: "about" */ '../views/CategoryWiseProductView.vue')
+    component: () => import(/* webpackChunkName: "category" */ '../views/CategoryWiseProductView.vue')
   },
   {
     path:'/product/category/:categoryUrl',
     name:'product.category',
-    component: () => import(/* webpackChunkName: "about" */ '../views/CategoryWiseProductView1.vue')
+    component: () => import(/* webpackChunkName: "product.category" */ '../views/CategoryWiseProductView1.vue')
 
   },
   {
     path:'/search/product/:search_key',
     name:'search.product',
-    component: () => import(/* webpackChunkName: "about" */ '../views/SearchWiseProductView.vue')
+    component: () => import(/* webpackChunkName: "search.product" */ '../views/SearchWiseProductView.vue')
  },
 
   {
     path:'/product/search/:search_key',
     name:'product.search',
-    component: () => import(/* webpackChunkName: "about" */ '../views/SearchWiseProductView1.vue')
+    component: () => import(/* webpackChunkName: "product.search" */ '../views/SearchWiseProductView1.vue')
   },
   {
     path:'/product/details/:productUrl',
     name:'product.details',
-    component: () => import(/* webpackChunkName: "about" */ '../views/productDetails.vue')
+    component: () => import(/* webpackChunkName: "product.details" */ '../views/productDetails.vue')
   },
   {
     path:'/signin/',
     name:'signin',
-    component: () => import(/* webpackChunkName: "about" */ '../views/signInView.vue')
+    component: () => import(/* webpackChunkName: "signin" */ '../views/signInView.vue')
   },
   {
     path:'/checkout/',
     name:'checkout',
-    component: () => import(/* webpackChunkName: "about" */ '../views/checkOutPage.vue')
+    component: () => import(/* webpackChunkName: "checkout" */ '../views/checkOutPage.vue')
   },
    {
     path:'/cart/review',
     name:'cartReView',
-    component: () => import(/* webpackChunkName: "about" */ '../views/cartReview.vue')
+    component: () => import(/* webpackChunkName: "cartReView" */ '../views/cartReview.vue')
   }
 ]
 
